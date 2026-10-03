@@ -48,7 +48,7 @@
 
         public void GetDetails()
         {
-            Console.WriteLine($"Details about the customer: Name: {Name}, Id: {Id}");
+            Console.WriteLine($"Details about the customer: Name: {Name}, Id: {Id}, Password: {_password}");
         }
 
         public static void DoSomeCustomerStaff()

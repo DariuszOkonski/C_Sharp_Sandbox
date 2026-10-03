@@ -4,14 +4,28 @@
     {
         static void Main(string[] args)
         {
-            Customer customer1 = new Customer();
-            Customer customer2 = new Customer();
-            Customer customer3 = new Customer();
+            List<string> colors = new List<string>();
 
-            //customer3.GetDetails();
-            //Console.WriteLine("customer2: " + customer2.Id);
+            colors.Add("red");
+            colors.Add("blue");
+            colors.Add("green");
 
-            customer3.Password = "1234567890";
+
+
+
+            foreach (var color in colors)
+            {
+                Console.WriteLine(color);
+            }
+
+            Console.WriteLine();
+
+            colors.Remove("blue");
+            foreach (var color in colors)
+            {
+                Console.WriteLine(color);
+            }
+
 
 
             Console.ReadKey();
