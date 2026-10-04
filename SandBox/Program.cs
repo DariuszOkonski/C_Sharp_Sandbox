@@ -4,29 +4,27 @@
     {
         static void Main(string[] args)
         {
-            List<string> colors = new List<string>();
-
-            colors.Add("red");
-            colors.Add("blue");
-            colors.Add("green");
 
 
+            List<int> numbers = new List<int>() { 10, 5, 15, 3, 9, 25, 18 };
 
-
-            foreach (var color in colors)
+            Console.WriteLine("Unsorted list");
+            foreach (int number in numbers)
             {
-                Console.WriteLine(color);
+                Console.WriteLine(number);
             }
+
+            Predicate<int> isGreaterOrEqualThenTen = x => x >= 10;
+
+            List<int> higherEqualTen = numbers.FindAll(isGreaterOrEqualThenTen);
+            //higherEqualTen.Sort();
 
             Console.WriteLine();
-
-            colors.Remove("blue");
-            foreach (var color in colors)
+            Console.WriteLine("All numbers");
+            foreach (int number in higherEqualTen)
             {
-                Console.WriteLine(color);
+                Console.WriteLine(number);
             }
-
-
 
             Console.ReadKey();
         }
