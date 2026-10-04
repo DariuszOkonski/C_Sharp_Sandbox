@@ -14,19 +14,26 @@
                 Console.WriteLine(number);
             }
 
-            Predicate<int> isGreaterThenTen = x => x > 10;
+            // define the predicate to check if a number is greather than 10
+            //Predicate<int> isGreaterThenTenPredicate = x => x > 10;
+            Predicate<int> isGreaterThenTenPredicate = IsGreaterThenTen;
 
-            List<int> higherEqualTen = numbers.FindAll(isGreaterThenTen);
+            List<int> higherThenTen = numbers.FindAll(isGreaterThenTenPredicate);
             //higherEqualTen.Sort();
 
             Console.WriteLine();
             Console.WriteLine("All numbers here");
-            foreach (int number in higherEqualTen)
+            foreach (int number in higherThenTen)
             {
                 Console.WriteLine(number);
             }
 
             Console.ReadKey();
+        }
+
+        public static bool IsGreaterThenTen(int x)
+        {
+            return x > 10;
         }
 
         static void DisplayCustomer(Customer customer)
