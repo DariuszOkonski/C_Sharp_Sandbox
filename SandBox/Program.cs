@@ -20,7 +20,7 @@
             //higherEqualTen.Sort();
 
             Console.WriteLine();
-            Console.WriteLine("All numbers");
+            Console.WriteLine("All numbers here");
             foreach (int number in higherEqualTen)
             {
                 Console.WriteLine(number);
