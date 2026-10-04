@@ -4,29 +4,22 @@
     {
         static void Main(string[] args)
         {
+            List<Product> products =
+            [
+                new Product { Name = "Apple", Price = 0.80 },
+                new Product { Name = "Banana", Price = 0.30 },
+                new Product { Name = "Cherry", Price = 3.80 },
+
+            ];
+            products.Add(new Product { Name = "Berries", Price = 2.99 });
 
 
-            List<int> numbers = new List<int>() { 10, 5, 15, 3, 9, 25, 18 };
-
-            Console.WriteLine("Unsorted list");
-            foreach (int number in numbers)
+            Console.WriteLine("Available products:");
+            foreach (var product in products)
             {
-                Console.WriteLine(number);
+                Console.WriteLine($"Product name: {product.Name} for ${product.Price}");
             }
 
-            // define the predicate to check if a number is greather than 10
-            //Predicate<int> isGreaterThenTenPredicate = x => x > 10;
-            Predicate<int> isGreaterThenTenPredicate = IsGreaterThenTen;
-
-            List<int> higherThenTen = numbers.FindAll(isGreaterThenTenPredicate);
-            //higherEqualTen.Sort();
-
-            Console.WriteLine();
-            Console.WriteLine("All numbers here");
-            foreach (int number in higherThenTen)
-            {
-                Console.WriteLine(number);
-            }
 
             Console.ReadKey();
         }
