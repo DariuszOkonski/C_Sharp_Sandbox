@@ -14,9 +14,9 @@
                 Console.WriteLine(number);
             }
 
-            Predicate<int> isGreaterOrEqualThenTen = x => x >= 10;
+            Predicate<int> isGreaterThenTen = x => x > 10;
 
-            List<int> higherEqualTen = numbers.FindAll(isGreaterOrEqualThenTen);
+            List<int> higherEqualTen = numbers.FindAll(isGreaterThenTen);
             //higherEqualTen.Sort();
 
             Console.WriteLine();
