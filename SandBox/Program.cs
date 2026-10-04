@@ -14,8 +14,10 @@
             products.Add(new Product { Name = "Berries", Price = 2.99 });
 
 
+            List<Product> cheapProducts = products.Where(p => p.Price < 1.0).ToList();
+
             Console.WriteLine("Available products:");
-            foreach (var product in products)
+            foreach (var product in cheapProducts)
             {
                 Console.WriteLine($"Product name: {product.Name} for ${product.Price}");
             }
