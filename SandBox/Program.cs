@@ -1,26 +1,46 @@
-﻿namespace SandBox
+﻿using System.Collections;
+
+namespace SandBox
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            List<Product> products =
-            [
-                new Product { Name = "Apple", Price = 0.80 },
-                new Product { Name = "Banana", Price = 0.30 },
-                new Product { Name = "Cherry", Price = 3.80 },
+            ArrayList myArrayList = new ArrayList();
 
-            ];
-            products.Add(new Product { Name = "Berries", Price = 2.99 });
+            myArrayList.Add(25);
+            myArrayList.Add("Hello");
+            myArrayList.Add(13.37);
+            myArrayList.Add(13);
+            myArrayList.Add(128);
+            myArrayList.Add(25.3);
+            myArrayList.Add(13);
 
 
-            List<Product> cheapProducts = products.Where(p => p.Price < 1.0).ToList();
+            myArrayList.Remove(13);
+            myArrayList.RemoveAt(0);
 
-            Console.WriteLine("Available products:");
-            foreach (var product in cheapProducts)
+            Console.WriteLine(myArrayList.Count);
+
+
+            double sum = 0;
+            foreach (var obj in myArrayList)
             {
-                Console.WriteLine($"Product name: {product.Name} for ${product.Price}");
+                if (obj is int)
+                {
+                    sum += Convert.ToDouble(obj);
+                }
+                else if (obj is double)
+                {
+                    sum += (double)obj;
+                }
+                else if (obj is string)
+                {
+                    Console.WriteLine(obj);
+                }
             }
+
+            Console.WriteLine($"Sum: {sum}");
 
 
             Console.ReadKey();
