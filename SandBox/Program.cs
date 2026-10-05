@@ -24,7 +24,7 @@ namespace SandBox
 
 
             double sum = 0;
-            foreach (var obj in myArrayList)
+            foreach (object obj in myArrayList)
             {
                 if (obj is int)
                 {
