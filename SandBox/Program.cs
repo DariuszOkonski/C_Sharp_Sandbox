@@ -4,40 +4,30 @@
     {
         static void Main(string[] args)
         {
+            int result = 0;
 
-            var codes = new Dictionary<string, string>
-            {
-                ["NY"] = "New York",
-                ["CA"] = "California",
-                ["TX"] = "Texas"
-            };
+            Console.WriteLine("Please enter a number");
 
-            if (codes.TryGetValue("NY1", out string state))
+            try
             {
-                Console.WriteLine(state);
+                int num1 = int.Parse(Console.ReadLine());
+                int num2 = 2;
+
+                result = num2 / num1;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("This always executes");
             }
 
-            foreach (var item in codes)
-            {
-                Console.WriteLine($"The state code is {item.Key}: {item.Value}");
-            }
-
-
+            Console.WriteLine("Result: " + result);
 
             Console.ReadKey();
-        }
-
-        public static bool IsGreaterThenTen(int x)
-        {
-            return x > 10;
-        }
-
-        static void DisplayCustomer(Customer customer)
-        {
-            Console.WriteLine("Name: " + customer.Name);
-            Console.WriteLine("Address: " + customer.Address);
-            Console.WriteLine("Contact Number: " + customer.ContactNumber);
-            Console.WriteLine();
         }
     }
 }
