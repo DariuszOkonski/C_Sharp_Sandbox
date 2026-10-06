@@ -1,47 +1,29 @@
-﻿using System.Collections;
-
-namespace SandBox
+﻿namespace SandBox
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            ArrayList myArrayList = new ArrayList();
+            Dictionary<int, string> employees = new Dictionary<int, string>();
 
-            myArrayList.Add(25);
-            myArrayList.Add("Hello");
-            myArrayList.Add(13.37);
-            myArrayList.Add(13);
-            myArrayList.Add(128);
-            myArrayList.Add(25.3);
-            myArrayList.Add(13);
+            employees.Add(101, "John Doe");
+            employees.Add(102, "Bob Smith");
+            employees.Add(103, "Rob Smith");
+            employees.Add(104, "Flob Smith");
+            employees.Add(105, "Dob Smith");
 
 
-            myArrayList.Remove(13);
-            myArrayList.RemoveAt(0);
+            var name = employees[101];
+            Console.WriteLine("Name: " + name);
 
-            Console.WriteLine(myArrayList.Count);
+            employees[102] = "Jane Smith";
 
+            employees.Remove(102);
 
-            double sum = 0;
-            foreach (object obj in myArrayList)
+            foreach (KeyValuePair<int, string> employee in employees)
             {
-                if (obj is int)
-                {
-                    sum += Convert.ToDouble(obj);
-                }
-                else if (obj is double)
-                {
-                    sum += (double)obj;
-                }
-                else if (obj is string)
-                {
-                    Console.WriteLine(obj);
-                }
+                Console.WriteLine($"Id: {employee.Key} - {employee.Value}");
             }
-
-            Console.WriteLine($"Sum: {sum}");
-
 
             Console.ReadKey();
         }
