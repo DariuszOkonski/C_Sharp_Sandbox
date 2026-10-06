@@ -4,26 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Dictionary<int, string> employees = new Dictionary<int, string>();
 
-            employees.Add(101, "John Doe");
-            employees.Add(102, "Bob Smith");
-            employees.Add(103, "Rob Smith");
-            employees.Add(104, "Flob Smith");
-            employees.Add(105, "Dob Smith");
-
-
-            var name = employees[101];
-            Console.WriteLine("Name: " + name);
-
-            employees[102] = "Jane Smith";
-
-            employees.Remove(102);
-
-            foreach (KeyValuePair<int, string> employee in employees)
+            var codes = new Dictionary<string, string>
             {
-                Console.WriteLine($"Id: {employee.Key} - {employee.Value}");
+                ["NY"] = "New York",
+                ["CA"] = "California",
+                ["TX"] = "Texas"
+            };
+
+            if (codes.TryGetValue("NY", out string state))
+            {
+
             }
+
+
 
             Console.ReadKey();
         }
