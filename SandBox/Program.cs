@@ -12,9 +12,14 @@
                 ["TX"] = "Texas"
             };
 
-            if (codes.TryGetValue("NY", out string state))
+            if (codes.TryGetValue("NY1", out string state))
             {
+                Console.WriteLine(state);
+            }
 
+            foreach (var item in codes)
+            {
+                Console.WriteLine($"The state code is {item.Key}: {item.Value}");
             }
 
 
