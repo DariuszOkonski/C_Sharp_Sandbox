@@ -1,4 +1,6 @@
-﻿namespace SandBox
+﻿using System.Diagnostics;
+
+namespace SandBox
 {
     internal class Program
     {
@@ -6,10 +8,14 @@
         {
             int result = 0;
 
-            Console.WriteLine("Please enter a number");
+            Debug.WriteLine("Main methid is running");
+
 
             try
             {
+
+
+                Console.WriteLine("Please enter a number");
                 int num1 = int.Parse(Console.ReadLine());
                 int num2 = 2;
 
