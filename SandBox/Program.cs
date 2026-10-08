@@ -4,12 +4,43 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your age: ");
-            GetUserAge(Console.ReadLine());
+            int result = 0;
 
+            Console.WriteLine("Main method is running");
+
+            try
+            {
+                Console.WriteLine("Please enter a number");
+
+                int num1 = int.Parse(Console.ReadLine());
+                int num2 = 2;
+
+                result = num2 / num1;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("DONT DEVIDE BY ZERO!!!" + ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("I TOLD YOU TO ENTER A NUMBER!!!" + ex.Message);
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine("NUMBER TO HIGHT!" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString());
+            }
+            finally
+            {
+                Console.WriteLine("This always executes");
+            }
 
             Console.ReadKey();
         }
+
 
         public static int GetUserAge(string input)
         {
