@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            Collie myCollie = new Collie();
+
+            myCollie.Eat();
+            myCollie.Bark();
+            myCollie.GoingNuts();
 
             Console.ReadKey();
         }
