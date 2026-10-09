@@ -4,11 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Collie myCollie = new Collie();
+            BaseClass baseClass = new BaseClass();
+            baseClass.ShowFields();
 
-            myCollie.Eat();
-            myCollie.Bark();
-            myCollie.GoingNuts();
+            DerivedClass derivedClass = new DerivedClass();
+            derivedClass.AccessFields();
+            derivedClass.ShowFields();
 
             Console.ReadKey();
         }
