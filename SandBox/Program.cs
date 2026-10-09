@@ -4,12 +4,13 @@
     {
         static void Main(string[] args)
         {
-            BaseClass baseClass = new BaseClass();
-            baseClass.ShowFields();
+            Animal animal = new Animal();
+            Cat cat = new Cat();
+            Dog dog = new Dog();
 
-            DerivedClass derivedClass = new DerivedClass();
-            derivedClass.AccessFields();
-            derivedClass.ShowFields();
+            animal.MakeSound();
+            cat.MakeSound();
+            dog.MakeSound();
 
             Console.ReadKey();
         }

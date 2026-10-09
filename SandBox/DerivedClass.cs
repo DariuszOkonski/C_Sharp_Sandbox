@@ -7,6 +7,8 @@
             publicField = 1;
             protectedField = 1;
 
+
+
         }
     }
 }

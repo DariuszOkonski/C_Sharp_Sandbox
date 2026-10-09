@@ -2,7 +2,7 @@
 {
     internal class Dog : Animal
     {
-        public void Bark()
+        public override void MakeSound()
         {
             Console.WriteLine("Barking...");
         }

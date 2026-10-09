@@ -6,5 +6,10 @@
         {
             Console.WriteLine("Eating...");
         }
+
+        public virtual void MakeSound()
+        {
+            Console.WriteLine("Animal makes a generic sound");
+        }
     }
 }
