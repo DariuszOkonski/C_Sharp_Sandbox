@@ -4,7 +4,7 @@
     {
         public override void MakeSound()
         {
-            Console.WriteLine("Meaow...");
+            Console.WriteLine("Meow...");
         }
     }
 }

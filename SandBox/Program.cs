@@ -4,13 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Animal animal = new Animal();
-            Cat cat = new Cat();
-            Dog dog = new Dog();
-
-            animal.MakeSound();
-            cat.MakeSound();
-            dog.MakeSound();
+            Employee joe = new Employee("Joe", 36, "Programmer", 1);
+            joe.DisplayPersonInfo();
 
             Console.ReadKey();
         }
