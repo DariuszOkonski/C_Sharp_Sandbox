@@ -17,6 +17,12 @@
         {
             Console.WriteLine($"Name: {Name}, Age: {Age}");
         }
+
+        public int BecomeOlder(int years)
+        {
+            Age = Age + years;
+            return Age;
+        }
     }
 
     public class Employee : Person

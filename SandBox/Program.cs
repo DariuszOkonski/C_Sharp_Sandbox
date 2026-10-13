@@ -8,7 +8,10 @@
             //joe.DisplayPersonInfo();
 
             Manager carl = new Manager("Carl", 45, "Manager", 123123, 7);
+
+            carl.BecomeOlder(5);
             carl.DisplayManagerInfo();
+
 
             Console.ReadKey();
         }
