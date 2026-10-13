@@ -38,4 +38,21 @@
                 $"Age: {Age}, JobTitle: {JobTitle}, EmployeeID: {EmployeeID}");
         }
     }
+
+    public class Manager : Employee
+    {
+        public int TeamSize { get; set; }
+        public Manager(string name, int age, string jobTitle, int employeeID, int teamSize)
+            : base(name, age, jobTitle, employeeID)
+        {
+            TeamSize = teamSize;
+        }
+
+        public void DisplayManagerInfo()
+        {
+            DisplayPersonInfo();
+            Console.WriteLine($"Team Size: {TeamSize}");
+
+        }
+    }
 }
