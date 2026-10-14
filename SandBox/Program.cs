@@ -6,14 +6,14 @@ namespace SandBox
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            dog.MakeSound();
-            dog.Eat("treat");
 
+            IPaymentProcessor creditCardProcessor = new CreditCardProcessor();
+            PaymentService paymentService = new PaymentService(creditCardProcessor);
+            paymentService.ProcessOrderPayment(100.00m);
 
-            Cat cat = new Cat();
-            cat.MakeSound();
-            cat.Eat("fish");
+            IPaymentProcessor paypalProcessor = new PayPalProcessor();
+            paymentService = new PaymentService(paypalProcessor);
+            paymentService.ProcessOrderPayment(200.00m);
 
 
             Console.ReadKey();

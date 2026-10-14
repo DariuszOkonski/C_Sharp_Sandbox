@@ -1,13 +1,8 @@
 ﻿namespace SandBox.InterfacesSection
 {
-    internal class Cat : IAnimal
+    public class Cat : Animal
     {
-        public void Eat(string food)
-        {
-            Console.WriteLine("Cat eats " + food);
-        }
-
-        public void MakeSound()
+        public override void MakeSound()
         {
             Console.WriteLine("Meow");
         }
