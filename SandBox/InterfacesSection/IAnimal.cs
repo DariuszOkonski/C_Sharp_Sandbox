@@ -4,6 +4,6 @@
     public interface IAnimal
     {
         void MakeSound();
-        void Eat();
+        void Eat(string food);
     }
 }

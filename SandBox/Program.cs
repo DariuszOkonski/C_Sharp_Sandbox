@@ -1,4 +1,4 @@
-﻿using SandBox.Classes;
+﻿using SandBox.InterfacesSection;
 
 namespace SandBox
 {
@@ -6,13 +6,14 @@ namespace SandBox
     {
         static void Main(string[] args)
         {
-            //Employee joe = new Employee("Joe", 36, "Programmer", 12345);
-            //joe.DisplayPersonInfo();
+            Dog dog = new Dog();
+            dog.MakeSound();
+            dog.Eat("treat");
 
-            Manager carl = new Manager("Carl", 45, "Manager", 123123, 7);
 
-            carl.BecomeOlder(5);
-            carl.DisplayManagerInfo();
+            Cat cat = new Cat();
+            cat.MakeSound();
+            cat.Eat("fish");
 
 
             Console.ReadKey();
