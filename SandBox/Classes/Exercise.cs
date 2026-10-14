@@ -1,4 +1,4 @@
-﻿namespace SandBox
+﻿namespace SandBox.Classes
 {
     public class Exercise
     {

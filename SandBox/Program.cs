@@ -1,4 +1,6 @@
-﻿namespace SandBox
+﻿using SandBox.Classes;
+
+namespace SandBox
 {
     internal class Program
     {
