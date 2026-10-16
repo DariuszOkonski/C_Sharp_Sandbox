@@ -1,19 +1,19 @@
 ﻿namespace SandBox
 {
-    internal class Program
+    internal partial class Program
     {
+
         static void Main(string[] args)
         {
-            string directoryPath = @"C:\Logs";
-            string filePath = Path.Combine(directoryPath, "log.txt");
-            string message = "This is a log entry";
+            ILogger fileLogger = new FileLogger();
 
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
+            Application app = new Application(fileLogger);
+            app.DoWork();
 
-            File.AppendAllText(filePath, message + "\n");
+            ILogger dbLogger = new DatabaseLogger();
+            app = new Application(dbLogger);
+            app.DoWork();
+
 
 
             Console.ReadKey();
