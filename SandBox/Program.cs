@@ -4,8 +4,16 @@
     {
         static void Main(string[] args)
         {
+            string directoryPath = @"C:\Logs";
+            string filePath = Path.Combine(directoryPath, "log.txt");
+            string message = "This is a log entry";
 
-            File.AppendAllText("log.txt", "Hello World" + "\n");
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            File.AppendAllText(filePath, message + "\n");
 
 
             Console.ReadKey();
