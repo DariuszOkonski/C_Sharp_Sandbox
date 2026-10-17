@@ -8,11 +8,12 @@ namespace SandBox
 
         static void Main(string[] args)
         {
+            Hammer hammer = new Hammer();
+            Saw saw = new Saw();
 
-            Builder builder = new Builder();
+            Builder builder = new Builder(hammer, saw);
 
-            builder.Build();
-
+            builder.BuildHouse();
 
             Console.ReadKey();
         }

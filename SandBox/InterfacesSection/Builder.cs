@@ -5,13 +5,13 @@
         private Hammer _hammer;
         private Saw _saw;
 
-        public Builder()
+        public Builder(Hammer hammer, Saw saw)
         {
-            _hammer = new Hammer();
-            _saw = new Saw();
+            _hammer = hammer;
+            _saw = saw;
         }
 
-        public void Build()
+        public void BuildHouse()
         {
             _hammer.Use();
             _saw.Use();
