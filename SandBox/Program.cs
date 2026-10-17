@@ -11,7 +11,9 @@ namespace SandBox
             Hammer hammer = new Hammer();
             Saw saw = new Saw();
 
-            Builder builder = new Builder(hammer, saw);
+            Builder builder = new Builder();
+            builder.SetHammer(hammer);
+            builder.SetSaw(saw);
 
             builder.BuildHouse();
 
