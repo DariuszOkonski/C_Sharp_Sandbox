@@ -8,14 +8,10 @@ namespace SandBox
 
         static void Main(string[] args)
         {
-            Hammer hammer = new Hammer();
-            Saw saw = new Saw();
+            MultiFunctionPrinter printer = new MultiFunctionPrinter();
 
-            Builder builder = new Builder();
-            builder.SetHammer(hammer);
-            builder.SetSaw(saw);
-
-            builder.BuildHouse();
+            printer.Print();
+            printer.Scan();
 
             Console.ReadKey();
         }
