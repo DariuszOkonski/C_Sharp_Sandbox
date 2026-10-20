@@ -3,18 +3,26 @@
 
     internal partial class Program
     {
+        // 1.Declaration
+        public delegate void Notify(string message);
+
         static void Main(string[] args)
         {
-            DateTime dateTime = new DateTime(2018, 5, 31);
 
-            Console.WriteLine("My birthday is {0}", dateTime);
+            // 2.Instantiation
+            Notify notifyDelegate1 = ShowMessage;
+            Notify notifyDelegate2 = new Notify(ShowMessage);
 
-            Console.WriteLine(DateTime.Today);
-            Console.WriteLine(DateTime.Now);
-
-
+            notifyDelegate1("message-1");
+            notifyDelegate2("message-2");
 
             Console.ReadKey();
         }
+
+        static void ShowMessage(string message)
+        {
+            Console.WriteLine($"Message: {message}");
+        }
+
     }
 }
