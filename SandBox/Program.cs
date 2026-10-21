@@ -1,44 +1,48 @@
-﻿namespace SandBox
-{
+﻿using SandBox.EventsAndDelegates;
 
+namespace SandBox
+{
     internal partial class Program
     {
 
         static void Main(string[] args)
         {
-            int[] intArray = { 1, 2, 3 };
-            string[] stringArray = { "one", "two", "three", "four" };
+            Person[] people =
+            {
+                new Person { Name = "Charlie", Age = 35 },
+                new Person { Name = "Bob", Age = 25 },
+                new Person { Name = "Alice", Age = 30 },
+            };
 
-            PrintArray(intArray);
-            PrintArray(stringArray);
+            PersonSorter sorter = new PersonSorter();
+            sorter.Sort(people, CompareByAge);
 
+            Console.WriteLine("Compare by age");
+            foreach (var person in people)
+            {
+                Console.WriteLine($"{person.Name}, {person.Age}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Compare by name");
+
+            sorter.Sort(people, CompareByName);
+            foreach (var person in people)
+            {
+                Console.WriteLine($"{person.Name}, {person.Age}");
+            }
 
             Console.ReadKey();
         }
 
-        public static void PrintIntArray(int[] array)
+        public static int CompareByAge(Person x, Person y)
         {
-            foreach (int item in array)
-            {
-                Console.WriteLine(item);
-            }
+            return x.Age.CompareTo(y.Age);
         }
 
-        public static void PrintStringArray(string[] array)
+        public static int CompareByName(Person x, Person y)
         {
-            foreach (var item in array)
-            {
-                Console.WriteLine(item);
-            }
+            return x.Name.CompareTo(y.Name);
         }
-
-        public static void PrintArray<T>(T[] array)
-        {
-            foreach (T item in array)
-            {
-                Console.WriteLine(item);
-            }
-        }
-
     }
 }
