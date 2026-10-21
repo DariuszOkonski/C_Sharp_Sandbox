@@ -11,6 +11,7 @@ namespace SandBox
             {
                 new Person { Name = "Charlie", Age = 35 },
                 new Person { Name = "Bob", Age = 25 },
+                new Person { Name = "Denis", Age = 36 },
                 new Person { Name = "Alice", Age = 30 },
             };
 
