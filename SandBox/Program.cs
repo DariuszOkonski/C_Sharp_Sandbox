@@ -1,25 +1,43 @@
-﻿using SandBox.EventsAndDelegates;
-
-namespace SandBox
+﻿namespace SandBox
 {
-    public delegate void LogHandler(string message);
 
     internal partial class Program
     {
 
         static void Main(string[] args)
         {
-            Logger logger = new Logger();
+            int[] intArray = { 1, 2, 3 };
+            string[] stringArray = { "one", "two", "three", "four" };
 
-            LogHandler logHandler = logger.LogToConsole;
-            logHandler("Logging to console");
-
-            logHandler = logger.LogToFile;
-
-            logHandler("Log to file");
+            PrintArray(intArray);
+            PrintArray(stringArray);
 
 
             Console.ReadKey();
+        }
+
+        public static void PrintIntArray(int[] array)
+        {
+            foreach (int item in array)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public static void PrintStringArray(string[] array)
+        {
+            foreach (var item in array)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public static void PrintArray<T>(T[] array)
+        {
+            foreach (T item in array)
+            {
+                Console.WriteLine(item);
+            }
         }
 
     }
