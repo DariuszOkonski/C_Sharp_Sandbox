@@ -7,7 +7,7 @@ namespace SandBox
 
         static void Main(string[] args)
         {
-            Logger.RunApp();
+            Logger.RunMain();
 
 
             Console.ReadKey();
