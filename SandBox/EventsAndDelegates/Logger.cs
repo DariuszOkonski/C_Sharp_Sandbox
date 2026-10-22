@@ -17,10 +17,15 @@
         {
             Logger logger = new Logger();
             LogHandler logHandler = logger.LogToConsole;
-            logHandler("Logging to console");
+            logHandler += logger.LogToFile;
 
-            logHandler = logger.LogToFile;
-            logHandler("Log some stuff");
+            logHandler("Log this info!!!");
+
+            Console.WriteLine("---");
+
+            logHandler -= logger.LogToFile;
+
+            logHandler("After removing LogToFile");
         }
     }
 }
