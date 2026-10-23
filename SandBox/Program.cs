@@ -1,4 +1,4 @@
-﻿using SandBox.EventsAndDelegates;
+﻿using SandBox.EventsAndDelegates.Program2;
 
 namespace SandBox
 {
@@ -6,8 +6,7 @@ namespace SandBox
     {
         static void Main(string[] args)
         {
-            Program1.Main();
-
+            Program2.RunMain();
 
             Console.ReadKey();
         }

@@ -4,7 +4,7 @@
 
     internal class Program1
     {
-        public static void Main()
+        public static void RunMain()
         {
             EventPublisher publisher = new EventPublisher();
             EventSubscriber subscriber1 = new EventSubscriber();
