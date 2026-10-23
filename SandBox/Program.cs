@@ -4,10 +4,9 @@ namespace SandBox
 {
     internal partial class Program
     {
-
         static void Main(string[] args)
         {
-            Logger.RunMain();
+            Program1.Main();
 
 
             Console.ReadKey();
