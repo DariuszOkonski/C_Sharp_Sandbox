@@ -2,7 +2,7 @@
 {
     internal class TemperatureMonitor
     {
-        public event TemperatureChangeHandler OnTemperatureChanged;
+        public event EventHandler<TemperatureChangedEventArgs> TemperatureChanged;
 
         private int _temperature;
         public int Temperature
@@ -14,19 +14,17 @@
 
             set
             {
-                _temperature = value;
-
-                if (_temperature > 30)
+                if (_temperature != value)
                 {
-                    // Raise Event
-                    RaiseTemperatureChangedEvent("Temperature is above threshold!");
+                    _temperature = value;
+                    OnTemperatureChangedEvent(new TemperatureChangedEventArgs(_temperature));
                 }
             }
         }
 
-        protected virtual void RaiseTemperatureChangedEvent(string message)
+        protected virtual void OnTemperatureChangedEvent(TemperatureChangedEventArgs e)
         {
-            OnTemperatureChanged?.Invoke(message);
+            TemperatureChanged?.Invoke(this, e);
         }
     }
 }

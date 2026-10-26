@@ -1,6 +1,6 @@
 ﻿namespace SandBox.EventsAndDelegates.Temperature
 {
-    public delegate void TemperatureChangeHandler(string message);
+    //public delegate void TemperatureChangeHandler(string message);
 
     internal class ProgramTemperature
     {
@@ -9,7 +9,10 @@
             TemperatureMonitor monitor = new TemperatureMonitor();
             TemperatureAlert alert = new TemperatureAlert();
 
-            monitor.OnTemperatureChanged += alert.OnTemperatureChanged;
+            monitor.Temperature = 20;
+            //monitor.OnTemperatureChanged += alert.OnTemperatureChanged;
+            monitor.TemperatureChanged += alert.OnTemperatureChanged;
+
 
             Console.WriteLine("Please enter the temperature: ");
             monitor.Temperature = int.Parse(Console.ReadLine());
