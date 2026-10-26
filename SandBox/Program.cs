@@ -1,4 +1,4 @@
-﻿using SandBox.EventsAndDelegates.Temperature;
+﻿using SandBox.RegularExpressions;
 
 namespace SandBox
 {
@@ -6,7 +6,7 @@ namespace SandBox
     {
         static void Main(string[] args)
         {
-            ProgramTemperature.MainRun();
+            ProgramRegularExpressions.RunMain();
 
             Console.ReadKey();
         }
