@@ -8,10 +8,12 @@
         {
             TemperatureMonitor monitor = new TemperatureMonitor();
             TemperatureAlert alert = new TemperatureAlert();
+            TempCoolingAlert alert2 = new TempCoolingAlert();
 
             monitor.Temperature = 20;
             //monitor.OnTemperatureChanged += alert.OnTemperatureChanged;
             monitor.TemperatureChanged += alert.OnTemperatureChanged;
+            monitor.TemperatureChanged += alert2.OnTemperatureChanged;
 
 
             Console.WriteLine("Please enter the temperature: ");
